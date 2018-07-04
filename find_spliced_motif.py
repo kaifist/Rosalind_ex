@@ -1,0 +1,73 @@
+# finding a spliced motif
+
+s = 'ACGTACGTGACG'
+t = 'GTA'
+
+#s = 'TATGTCAGGCTGTAAAGTTCTGCCGATAAGCTTTAAGGTAAAGGCGTAACCCCGTTTCTCCGAAAGCATGCAACTGGATTCGCGCAAATCCCTATTTGAAGACTATAGGGTATCCCTGTGTACTCGGGAAGTCACGTGTACGTGTTATTTAGCATCTAAACACGGCTCGCAATTTAAAGCGCTTAAAGAAGTATAGTGGAAGCTGCGCGTTAGCTGCGCCGTAAATAGGGCTCCGGGCCAAGCGCGGGGACACCAGACCACATTTATTGCGTGCCATTAGATTACCCGCAGTTGGAAAATCGAGCGCTGGGTCACGCCCGAGTCGAGCTACGGATGTGGATACGTGGGGTCATTGCACCTCAACAGACCAAGGATAAAGTGGCTGTAGCAGTAGTTACTGAGTCTGTCGGCCCTCGAAGGTATGCTTCGGTGGTAGGAATAGTCATTAGCCAGGCGCGCCAAACATTGATAGCTCCTATGGCATTAAGGGTCATTCTGCGGTGAAATCGAAAAAATTGAGGTCGTAAACACGCCACAATGAAACGATTGAGTGATTTCCCCTGAGTTGGGATATTTGAGATGGGGAAAGCGAGGTCCCTATGCACTTTCTTGCGTAATTAGCCGGATGTTCCGCGATAGGGAATTAGCGTTTATGTTTTACAAGAGAATCCAAACCTAGCGACGCGTTCTAGACCCGTCGGAGGACAAAAAATGACATCTGAGGTCTGTGAATATTGCCACGGTCTTGGACACGGATTATGAAAAGGGCAGTTACGACGGGGTAATGGGGGTACGCAGACTGAGCAATAGGCG'
+#t = 'AAAAAAATACGAAGAGAGAA'
+
+pos_dict = {}
+
+
+
+for i in range(len(s)):
+	for j in range(len(t)):
+		if s[i] == t[j] and i < j:
+			
+			
+
+
+
+n = []
+def algo(s, t):
+	m = []
+	for n,j in enumerate(t):
+		pos_dict[(n, t[n])] = []
+		for i in range(len(s)):
+			
+			if t[n] == s[i] and i > n:
+				
+				pos_dict[(n, t[n])].append(i+1)
+
+	return pos_dict 
+
+
+
+	
+for i in range(len(s)):
+	if s[i] in t: 
+		for j in range(len(t)):
+			if t[j] == s[i] and i > j:
+				n += (t[j], i+1),
+
+#print(n)
+m = algo(s,t)
+
+print(m)
+
+for i, j in (sorted(pos_dict.items())):
+	print(i, len(j))	
+		
+
+
+
+position = []
+for i in range(len(t)):
+	for base in m:
+		position.append(base) 
+
+
+
+# for i in range(len(t)):
+# 	for j in range(len(m)):
+# 		if m[j][0] == t[i] and m[j][1] < m[j-1][1]:
+# 			print(m[j])
+
+
+
+
+
+
+
+
+
