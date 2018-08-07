@@ -45,16 +45,4 @@ def motif_location(motif, dna):
 
 print(motif_location(pattern, adn))
 
-## pruebas regex
 
-if match:
-	print('YES')
-
-if re.search(r'H[AEI\\OU^aeiou]?LA', 'HLA'):
-	print('SI')
-
-if re.search(r'HO*(LA)?', 'HOO'):
-	print('SI')
-
-if re.search(r'H[OAE]{3,4}(LA)', 'HEEELA'):
-	print('SI')
